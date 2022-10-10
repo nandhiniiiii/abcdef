@@ -1,0 +1,84 @@
+<?xml version="1.0" ?>
+<robot name="nannanananan" xmlns:xacro="http://www.ros.org/wiki/xacro">
+
+<xacro:include filename="$(find nannanananan_description)/urdf/materials.xacro" />
+<xacro:include filename="$(find nannanananan_description)/urdf/nannanananan.trans" />
+<xacro:include filename="$(find nannanananan_description)/urdf/nannanananan.gazebo" />
+<link name="base_link">
+  <inertial>
+    <origin xyz="-0.0013982302040001131 0.015379758904105754 0.06641919349562576" rpy="0 0 0"/>
+    <mass value="1.317489111222947"/>
+    <inertia ixx="0.001739" iyy="0.005522" izz="0.006384" ixy="0.0" iyz="0.0" ixz="0.000193"/>
+  </inertial>
+  <visual>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://nannanananan_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://nannanananan_description/meshes/base_link.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="whell_2_1">
+  <inertial>
+    <origin xyz="3.340457739031688e-07 0.004999758904105908 8.432927334905971e-08" rpy="0 0 0"/>
+    <mass value="0.6165375582669965"/>
+    <inertia ixx="0.00039" iyy="0.000771" izz="0.00039" ixy="-0.0" iyz="-0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.064858 -0.07038 -0.056191" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://nannanananan_description/meshes/whell_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.064858 -0.07038 -0.056191" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://nannanananan_description/meshes/whell_2_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<link name="whell_1">
+  <inertial>
+    <origin xyz="3.340457746803249e-07 -0.005000241095894663 8.432927341844865e-08" rpy="0 0 0"/>
+    <mass value="0.6165375582669967"/>
+    <inertia ixx="0.00039" iyy="0.000771" izz="0.00039" ixy="-0.0" iyz="0.0" ixz="-0.0"/>
+  </inertial>
+  <visual>
+    <origin xyz="0.064858 0.03962 -0.056191" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://nannanananan_description/meshes/whell_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+    <material name="silver"/>
+  </visual>
+  <collision>
+    <origin xyz="0.064858 0.03962 -0.056191" rpy="0 0 0"/>
+    <geometry>
+      <mesh filename="package://nannanananan_description/meshes/whell_1.stl" scale="0.001 0.001 0.001"/>
+    </geometry>
+  </collision>
+</link>
+
+<joint name="Rev1" type="continuous">
+  <origin xyz="-0.064858 0.07038 0.056191" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="whell_2_1"/>
+  <axis xyz="-0.0 1.0 0.0"/>
+</joint>
+
+<joint name="Rev2" type="continuous">
+  <origin xyz="-0.064858 -0.03962 0.056191" rpy="0 0 0"/>
+  <parent link="base_link"/>
+  <child link="whell_1"/>
+  <axis xyz="0.0 -1.0 -0.0"/>
+</joint>
+
+</robot>
