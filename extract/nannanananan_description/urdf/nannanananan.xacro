@@ -71,14 +71,14 @@
   <origin xyz="-0.064858 0.07038 0.056191" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="whell_2_1"/>
-  <axis xyz="-0.0 1.0 0.0"/>
+  <axis xyz="0.0 1.0 0.0"/>
 </joint>
 
 <joint name="Rev2" type="continuous">
   <origin xyz="-0.064858 -0.03962 0.056191" rpy="0 0 0"/>
   <parent link="base_link"/>
   <child link="whell_1"/>
-  <axis xyz="0.0 -1.0 -0.0"/>
+  <axis xyz="0.0 1.0 0.0"/>
 </joint>
 
 </robot>
