@@ -34,7 +34,7 @@
     <updateRate>${1000}</updateRate>
 
     <!-- Name of left joint, defaults to `left_joint` -->
-    <leftJoint>base_whell_2_1</leftJoint>
+    <leftJoint>rev1</leftJoint>
 
     <!-- Name of right joint, defaults to `right_joint` -->
     <rightJoint>base_whell_1</rightJoint>
